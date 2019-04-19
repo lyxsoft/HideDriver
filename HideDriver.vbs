@@ -17,7 +17,6 @@ nDrivers = ReadDrivers ()
 
 If strDriver <> "" Then
 	WScript.CreateObject("Shell.application").shellexecute "REG", "ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDrives /t REG_DWORD /d " & (nDrivers OR (2 ^ (ASC(strDriver)-ASC("A")))),"","runas",0
-	'cShell.Run "REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDrives /t REG_DWORD /d " & (nDrivers OR (2 ^ (ASC(strDriver)-ASC("A")))), 0, 0
 ElseIf nDrivers <> 0 Then
 	Dim nPos, sDrivers
 
