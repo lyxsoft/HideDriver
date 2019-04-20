@@ -2,7 +2,7 @@
 '
 '	Hiding the driver in Windows
 '
-'   Set the HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDrives Data
+'	Set the HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDrives Data
 '	Need Administrator authorization, so use "Shell.application.shellexecute" to RunAs
 '
 On Error Resume Next
