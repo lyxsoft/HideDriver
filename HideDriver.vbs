@@ -31,4 +31,6 @@ Else
 End If
 
 Set cShell = Nothing
+WScript.Quit
 
+' End of file
