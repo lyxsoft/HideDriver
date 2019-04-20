@@ -19,9 +19,9 @@ End Function
 Set cShell = Wscript.CreateObject("WScript.Shell")
 
 strDriver = UCase(InputBox ("Hidden the Driver:" & vbcrlf & _
-														"[~][Driver Letter][...]" & vbcrlf & _
-														"Use ~ to show the driver." & vbcrlf & _
- 														"Don't input anything to show the current hidden drivers.", "Which driver you like to hide or show?"))
+							"[~][Driver Letter][...]" & vbcrlf & _
+							"Use ~ to show the driver." & vbcrlf & _
+ 							"Don't input anything to show the current hidden drivers.", "Which driver you like to hide or show?"))
 nDrivers = ReadDrivers ()
 
 If strDriver <> "" Then
