@@ -15,6 +15,12 @@ Function ReadDrivers ()
 	ReadDrivers = cShell.RegRead ("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDrives")
 End Function
 
+Function SetDrivers ()
+	'Use this to let windows to ask authorization for administrator if needed.
+	WScript.CreateObject("Shell.application").ShellExecute "REG", "ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDrives /t REG_DWORD /d " & nDrivers & " /f","","RunAs",0
+	'Use this for Shell interface
+	'cShell.RegWrite ("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDrives", nDrivers, "REG_DWORD")
+End Function
 
 Set cShell = Wscript.CreateObject("WScript.Shell")
 
@@ -41,7 +47,7 @@ If strDriver <> "" Then
 			bRevert = False
 		End If
 	Next
-	WScript.CreateObject("Shell.application").shellexecute "REG", "ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDrives /t REG_DWORD /d " & nDrivers & " /f","","RunAs",0
+	SetDrivers
 ElseIf nDrivers <> 0 Then
 	strDriver = ""
 	For nPos = 1 to 26
